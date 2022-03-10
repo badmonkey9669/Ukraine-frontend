@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Container, Navbar } from "react-bootstrap";
+import { Container, Image, Navbar, Stack } from "react-bootstrap";
 import { ethers } from "ethers";
 import Web3Modal from "web3modal";
+
+import UkrFlag from "../icons/ukr_flag.png";
 
 const providerOptions = {
   /* See Provider Options Section */
@@ -34,7 +36,12 @@ function NavBar() {
   return (
     <Navbar>
       <Container>
-        <Navbar.Brand href="#home">You Will See Our Faces</Navbar.Brand>
+        <Navbar.Brand href="#home">
+          <Stack gap={2} direction="horizontal">
+            <Image src={UkrFlag} height={50} width={50} />
+            <h4>You Will See Our Faces</h4>
+          </Stack>
+        </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
