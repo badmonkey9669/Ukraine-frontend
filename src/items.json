@@ -50,7 +50,7 @@
     {
         "id": "6",
         "name": "Food",
-        "imageSrc": "/images/NVGS.jpg",
+        "imageSrc": "/images/Food.png",
         "description": "",
         "unitCost": 41000,
         "type": "humanitarian"
@@ -74,7 +74,7 @@
     {
         "id": "9",
         "name": "Psychological Support",
-        "imageSrc": "/images/NVGS.jpg",
+        "imageSrc": "/images/Psychological.png",
         "description": "",
         "unitCost": 41000,
         "type": "humanitarian"
