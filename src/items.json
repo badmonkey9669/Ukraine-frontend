@@ -1,0 +1,38 @@
+[
+    {
+        "id": "0",
+        "name": "Javelin",
+        "imageSrc": "/images/Javelin.jpg",
+        "description": "The U.S. previously sold Ukraine 47 command launch units (CLUs) and 370 actual missiles. Ukraine has barely enough Javelins to equip an army brigade; it has nearly 30 brigades as well as an assortment of smaller units, reservists, and special operations forces. Fully outfitting the Ukrainian Ground Forces with Javelins would require something on the order of 1,500 CLUs and 5,000 or more missiles.",
+        "unitCost": 175203
+    },
+    {
+        "id": "1",
+        "name": "HIMARS",
+        "imageSrc": "/images/HIMARS.jpg",
+        "description": "Ukrainian units could use a HIMARS/GMLRS combo to target Russian Army units far behind the front lines, showering headquarters units, fuel dumps, air defenses, and artillery with precision-guided rockets. A range of 43 miles would undermine the morale of Russian forces far from the front lines and allow Ukraine to strike targets inside Russia itself. ",
+        "unitCost": 5100000
+    },
+    {
+        "id": "2",
+        "name": "Stinger",
+        "imageSrc": "/images/Stinger.jpg",
+        "description": "Stinger missiles would be particularly useful in negating Russia's advantage in helicopters, both Mi-8/17 transport helicopters and Ka-52 attack helicopters. These helicopters would be used to transport air assault troops to landing zones 200 or more miles behind enemy lines, as well as to provide close air support to Russian ground units and to hunt Ukrainian tanks.Stingers would also be useful against the Russian Armyfleet of 500 drones, including the Orlan-10,medium-range drone used to locate targets of Russian artillery.",
+        "unitCost": 38000
+    },
+    {
+        "id": "3",
+        "name": "NASAMS",
+        "imageSrc": "/images/NASAMS.jpg",
+        "description": "",
+        "unitCost": 50000000
+    },
+    {
+        "id": "4",
+        "name": "Night Vision Goggles",
+        "imageSrc": "/images/NVGS.jpg",
+        "description": "",
+        "unitCost": 41000
+    }
+    
+]
