@@ -11,6 +11,7 @@ import {
   Stack,
 } from "react-bootstrap";
 import styled from "styled-components";
+import { BlockNativeContext } from "../contexts/BlocknativeContext";
 
 import { EthersContext } from "../contexts/EthersContext";
 import { ReactComponent as DAI } from "../icons/dai.svg";
@@ -40,6 +41,7 @@ interface Props {
 function Item(props: Props) {
   const { item } = props;
   const { FundUkraine } = useContext(EthersContext);
+  const { notify } = useContext(BlockNativeContext);
   const [daiAmount, setDaiAmount] = useState(0);
 
   const handleDonateWithEth = async () => {
@@ -49,7 +51,13 @@ function Item(props: Props) {
   };
 
   const handleDonateWithDAI = async (amount: number) => {
-    await FundUkraine.donateWithDai(item.id, amount);
+    const txn = await FundUkraine.donateWithDai(item.id, amount);
+
+    console.log(txn.hash);
+
+    if (notify) {
+      notify(txn.hash);
+    }
   };
 
   return (
