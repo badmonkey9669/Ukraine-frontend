@@ -43,11 +43,27 @@ function Item(props: Props) {
   const { FundUkraine } = useContext(EthersContext);
   const { notify } = useContext(BlockNativeContext);
   const [daiAmount, setDaiAmount] = useState(0);
+  const [ethAmount, setEthAmount] = useState(0);
+
+  const clearInputs = () => {
+    setDaiAmount(0);
+    setEthAmount(0);
+  };
 
   const handleDonateWithEth = async () => {
-    await FundUkraine.donateWithEth(item.id, {
-      value: ethers.utils.parseEther("0.1"),
-    });
+    if (ethAmount > 0) {
+      const txn = await FundUkraine.donateWithEth(item.id, {
+        value: ethers.utils.parseEther(String(ethAmount)),
+      });
+
+      console.log(txn.hash);
+
+      if (notify) {
+        notify(txn.hash);
+      }
+
+      clearInputs();
+    }
   };
 
   const handleDonateWithDAI = async (amount: number) => {
@@ -58,6 +74,8 @@ function Item(props: Props) {
     if (notify) {
       notify(txn.hash);
     }
+
+    clearInputs();
   };
 
   return (

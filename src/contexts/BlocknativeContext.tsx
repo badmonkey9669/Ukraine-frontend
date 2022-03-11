@@ -6,9 +6,9 @@ export const BlockNativeContext = createContext({} as any);
 
 export function BlockNativeContextProvider({ children }: any) {
   //   const { provider } = useContext(EthersContext);
-
+  console.log(process.env.BlocknativeApiKey);
   const notify = Notify({
-    dappId: process.env.blocknativeApiKey, // [String] The API key created by step one above
+    dappId: process.env.BlocknativeApiKey, // [String] The API key created by step one above
     networkId: 31337, // [Integer] The Ethereum network ID your Dapp uses.
   });
 

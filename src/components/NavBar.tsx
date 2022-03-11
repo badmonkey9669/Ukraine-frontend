@@ -36,7 +36,7 @@ function NavBar() {
   return (
     <Navbar>
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <Stack gap={2} direction="horizontal">
             <Image src={UkrFlag} height={50} width={50} />
             <h4>You Will See Our Faces</h4>
@@ -45,7 +45,7 @@ function NavBar() {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            Signed in as: <a href="#login">{address}</a>
+            Signed in as: <a href="/me">{address}</a>
           </Navbar.Text>
         </Navbar.Collapse>
       </Container>
