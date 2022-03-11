@@ -1,9 +1,18 @@
-import { Contract } from "ethers";
-import React, { useContext } from "react";
-import { Button, ButtonGroup, Card, Col, Row, Stack } from "react-bootstrap";
+import { ethers } from "ethers";
+import React, { useContext, useState } from "react";
+import {
+  Button,
+  ButtonGroup,
+  Card,
+  Col,
+  FormControl,
+  InputGroup,
+  Row,
+  Stack,
+} from "react-bootstrap";
 import styled from "styled-components";
-import { EthersContext } from "../contexts/EthersContext";
 
+import { EthersContext } from "../contexts/EthersContext";
 import { ReactComponent as DAI } from "../icons/dai.svg";
 import { ReactComponent as ETH } from "../icons/eth.svg";
 import { ReactComponent as USDC } from "../icons/usdc.svg";
@@ -31,9 +40,16 @@ interface Props {
 function Item(props: Props) {
   const { item } = props;
   const { FundUkraine } = useContext(EthersContext);
+  const [daiAmount, setDaiAmount] = useState(0);
 
   const handleDonateWithEth = async () => {
-    await FundUkraine.donateWithEth(item.id);
+    await FundUkraine.donateWithEth(item.id, {
+      value: ethers.utils.parseEther("0.1"),
+    });
+  };
+
+  const handleDonateWithDAI = async (amount: number) => {
+    await FundUkraine.donateWithDai(item.id, amount);
   };
 
   return (
@@ -54,20 +70,70 @@ function Item(props: Props) {
           <Stack gap={3}>
             <p>{item.description}</p>
             <ButtonGroup>
-              <Stack direction="horizontal" gap={2}>
+              <Stack gap={2}>
                 <strong>Donate with: </strong>
-                <Button variant="outline-primary" onClick={handleDonateWithEth}>
-                  <ETH /> ETH
-                </Button>
-                <Button variant="outline-info">
-                  <USDC /> USDC
-                </Button>
-                <Button variant="outline-success">
-                  <USDT /> USDT
-                </Button>
-                <Button variant="outline-warning">
-                  <DAI /> DAI
-                </Button>
+
+                <InputGroup className="mb-3">
+                  <FormControl
+                    placeholder="eg. 0.02"
+                    aria-label="Donate ETH"
+                    aria-describedby="basic-addon2"
+                  />
+                  <InputGroup.Text id="basic-addon2">
+                    <Button
+                      variant="outline-primary"
+                      onClick={handleDonateWithEth}
+                    >
+                      <ETH /> ETH
+                    </Button>
+                  </InputGroup.Text>
+                </InputGroup>
+
+                <InputGroup className="mb-3">
+                  <FormControl
+                    placeholder="eg. 200000"
+                    aria-label="Donate USDC"
+                    aria-describedby="basic-addon2"
+                  />
+                  <InputGroup.Text id="basic-addon2">
+                    <Button variant="outline-info">
+                      <USDC /> USDC
+                    </Button>
+                  </InputGroup.Text>
+                </InputGroup>
+                <InputGroup className="mb-3">
+                  <FormControl
+                    placeholder="eg. 200000"
+                    aria-label="Donate USDT"
+                    aria-describedby="basic-addon2"
+                  />
+                  <InputGroup.Text id="basic-addon2">
+                    <Button variant="outline-success">
+                      <USDT /> USDT
+                    </Button>
+                  </InputGroup.Text>
+                </InputGroup>
+
+                <InputGroup className="mb-3">
+                  <FormControl
+                    placeholder="eg. 200000"
+                    aria-label="Donate DAI"
+                    aria-describedby="basic-addon2"
+                  />
+                  <InputGroup.Text
+                    id="basic-addon2"
+                    onChange={({ target: { value } }: any) => {
+                      setDaiAmount(value);
+                    }}
+                  >
+                    <Button
+                      variant="outline-warning"
+                      onClick={() => handleDonateWithDAI(daiAmount)}
+                    >
+                      <DAI /> DAI
+                    </Button>
+                  </InputGroup.Text>
+                </InputGroup>
               </Stack>
             </ButtonGroup>
           </Stack>

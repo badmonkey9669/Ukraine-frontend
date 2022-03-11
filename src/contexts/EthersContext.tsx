@@ -3,8 +3,8 @@ import React, { createContext } from "react";
 
 import FundUkraineAbi from "../abis/FundUkraine.json";
 
-const FundUkraineAddress = "0x0ed64d01D0B4B655E410EF1441dD677B695639E7";
-const MockDaiAddress = "0x5302E909d1e93e30F05B5D6Eea766363D14F9892";
+const FundUkraineAddress = "0x4bf010f1b9beDA5450a8dD702ED602A104ff65EE";
+const MockDaiAddress = "0x0ed64d01D0B4B655E410EF1441dD677B695639E7";
 
 export const EthersContext = createContext({} as any);
 
