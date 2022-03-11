@@ -1,6 +1,8 @@
-import React from "react";
+import { Contract } from "ethers";
+import React, { useContext } from "react";
 import { Button, ButtonGroup, Card, Col, Row, Stack } from "react-bootstrap";
 import styled from "styled-components";
+import { EthersContext } from "../contexts/EthersContext";
 
 import { ReactComponent as DAI } from "../icons/dai.svg";
 import { ReactComponent as ETH } from "../icons/eth.svg";
@@ -14,6 +16,7 @@ const MarginVertical = styled.div`
 `;
 
 interface AidItem {
+  id: number;
   name: string;
   description: string;
   imageSrc: string;
@@ -27,6 +30,11 @@ interface Props {
 
 function Item(props: Props) {
   const { item } = props;
+  const { FundUkraine } = useContext(EthersContext);
+
+  const handleDonateWithEth = async () => {
+    await FundUkraine.donateWithEth(item.id);
+  };
 
   return (
     <MarginVertical>
@@ -48,7 +56,7 @@ function Item(props: Props) {
             <ButtonGroup>
               <Stack direction="horizontal" gap={2}>
                 <strong>Donate with: </strong>
-                <Button variant="outline-primary">
+                <Button variant="outline-primary" onClick={handleDonateWithEth}>
                   <ETH /> ETH
                 </Button>
                 <Button variant="outline-info">

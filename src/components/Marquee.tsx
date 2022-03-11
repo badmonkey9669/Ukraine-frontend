@@ -99,6 +99,69 @@ function Marquee() {
         <span>
           YOU WILL SEE OUR FACES. <Image src={UkrFlag} height={20} width={20} />
         </span>
+        <span>
+          YOU WILL NOT SEE OUR BACKS.{" "}
+          <Image src={UkrFlag} height={20} width={20} />
+        </span>
+        <span>
+          YOU WILL SEE OUR FACES. <Image src={UkrFlag} height={20} width={20} />
+        </span>
+        <span>
+          YOU WILL NOT SEE OUR BACKS.{" "}
+          <Image src={UkrFlag} height={20} width={20} />
+        </span>
+        <span>
+          YOU WILL SEE OUR FACES. <Image src={UkrFlag} height={20} width={20} />
+        </span>
+        <span>
+          YOU WILL NOT SEE OUR BACKS.{" "}
+          <Image src={UkrFlag} height={20} width={20} />
+        </span>
+        <span>
+          YOU WILL SEE OUR FACES. <Image src={UkrFlag} height={20} width={20} />
+        </span>
+        <span>
+          YOU WILL NOT SEE OUR BACKS.{" "}
+          <Image src={UkrFlag} height={20} width={20} />
+        </span>
+        <span>
+          YOU WILL SEE OUR FACES. <Image src={UkrFlag} height={20} width={20} />
+        </span>
+        <span>
+          YOU WILL NOT SEE OUR BACKS.{" "}
+          <Image src={UkrFlag} height={20} width={20} />
+        </span>
+        <span>
+          YOU WILL SEE OUR FACES. <Image src={UkrFlag} height={20} width={20} />
+        </span>
+        <span>
+          YOU WILL NOT SEE OUR BACKS.{" "}
+          <Image src={UkrFlag} height={20} width={20} />
+        </span>
+        <span>
+          YOU WILL SEE OUR FACES. <Image src={UkrFlag} height={20} width={20} />
+        </span>
+        <span>
+          YOU WILL NOT SEE OUR BACKS.{" "}
+          <Image src={UkrFlag} height={20} width={20} />
+        </span>
+        <span>
+          YOU WILL SEE OUR FACES. <Image src={UkrFlag} height={20} width={20} />
+        </span>
+        <span>
+          YOU WILL NOT SEE OUR BACKS.{" "}
+          <Image src={UkrFlag} height={20} width={20} />
+        </span>
+        <span>
+          YOU WILL SEE OUR FACES. <Image src={UkrFlag} height={20} width={20} />
+        </span>
+        <span>
+          YOU WILL NOT SEE OUR BACKS.{" "}
+          <Image src={UkrFlag} height={20} width={20} />
+        </span>
+        <span>
+          YOU WILL SEE OUR FACES. <Image src={UkrFlag} height={20} width={20} />
+        </span>
       </div>
     </StyledMarquee>
   );
